@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/utils/dimension.dart';
 
 class BigText extends StatelessWidget {
-
-   Color? color;
+  Color? color;
   final String text;
-  double  size;
+  double size;
   TextOverflow overflow;
-   BigText({Key? key, this.color = const Color(0xFF332d2b), required this.text, this.overflow = TextOverflow.ellipsis, this.size = 20}) : super(key: key);
+  BigText(
+      {Key? key,
+      this.color = const Color(0xFF332d2b),
+      required this.text,
+      this.overflow = TextOverflow.ellipsis,
+      this.size = 0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,11 @@ class BigText extends StatelessWidget {
       text,
       maxLines: 1,
       overflow: overflow,
-      style: TextStyle(color: color, fontFamily: 'Roboto',fontWeight: FontWeight.w400,fontSize: size),
+      style: TextStyle(
+          color: color,
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w400,
+          fontSize:size == 0 ? Dimensions.font20: size),
     );
   }
 }
