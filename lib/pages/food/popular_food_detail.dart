@@ -4,6 +4,7 @@ import 'package:food_delivery/utils/dimension.dart';
 import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/big_text.dart';
+import 'package:food_delivery/widgets/expandable_text_widget.dart';
 import 'package:food_delivery/widgets/icon_and_text_widget.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
@@ -60,13 +61,15 @@ class PopularFoodDetail extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AppColumn(
-                      text: 'Chinese Side',
-                    ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
-                    BigText(text: 'Introduce')
+                    AppColumn(text: 'Chinese Side'),
+                    SizedBox(height: Dimensions.height20),
+                    BigText(text: 'Introduce'),
+                    SizedBox(height: Dimensions.height20),
+                    Expanded(
+                        child: SingleChildScrollView(
+                            child: ExpandableTextWidget(
+                                text:
+                                    'Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something Lorem Ispum Something something, color: AppColors.paraColor, color: AppColors.paraColor, color: AppColors.paraColor, color: AppColors.paraColor,')))
                   ],
                 ),
               ))
