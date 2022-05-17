@@ -18,7 +18,8 @@ import 'package:get/get.dart';
 class PopularFoodDetail extends StatelessWidget {
   final int pageId;
   final String page;
-  const PopularFoodDetail({Key? key, required this.pageId, required this.page}) : super(key: key);
+  const PopularFoodDetail({Key? key, required this.pageId, required this.page})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +58,9 @@ class PopularFoodDetail extends StatelessWidget {
                 children: [
                   GestureDetector(
                       onTap: () {
-                        if(page=="cartpage"){
+                        if (page == "cartpage") {
                           Get.toNamed(RouteHelper.getCartPage());
-                        }else{
+                        } else {
                           Get.toNamed(RouteHelper.getInitial());
                         }
                       },
@@ -67,15 +68,13 @@ class PopularFoodDetail extends StatelessWidget {
                   GetBuilder<PopularProductController>(
                     builder: (controller) {
                       return GestureDetector(
-                        onTap: (){
-                          if(controller.totalItems >= 1)
+                        onTap: () {
+                          if (controller.totalItems >= 1)
                             Get.toNamed(RouteHelper.getCartPage());
                         },
                         child: Stack(
                           children: [
-                            
-
-                               AppIcon(icon: Icons.add_shopping_cart_outlined),
+                            AppIcon(icon: Icons.add_shopping_cart_outlined),
                             controller.totalItems >= 1
                                 ? Positioned(
                                     right: 0,
